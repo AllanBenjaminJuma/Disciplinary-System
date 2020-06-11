@@ -6,6 +6,7 @@
 package student.disciplinary.system;
 
 import student.disciplinary.system.view.AdminLogIn;
+import student.disciplinary.system.view.LoginTwo;
 
 
 /**
@@ -19,7 +20,7 @@ public class StudentDisciplinarySystem {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        AdminLogIn adminLogIn2 = new AdminLogIn();
+        LoginTwo adminLogIn2 = new LoginTwo();
         
         adminLogIn2.setVisible(true);
     }

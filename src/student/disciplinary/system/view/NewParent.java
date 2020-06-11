@@ -21,7 +21,7 @@ import model.DBConnection;
 public class NewParent extends javax.swing.JFrame {
 
     public Connection conn2 = null;
-    MainMenu mainMenu = new MainMenu();
+    AdminMainMenu mainMenu = new AdminMainMenu();
 
     public Connection getConn(){
     

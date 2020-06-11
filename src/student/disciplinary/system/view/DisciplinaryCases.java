@@ -21,10 +21,14 @@ import net.proteanit.sql.DbUtils;
  * @author allen
  */
 public class DisciplinaryCases extends javax.swing.JFrame {
+    
+    
+    AdminMainMenu mainMenu = new AdminMainMenu();
+    SendEmail sender = new SendEmail();
 
    public Connection conn5 = null;
     Statement stmt = null;
-    
+        
     public Connection getConn(){
     
         try {
@@ -57,10 +61,9 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, e);
         }
     }*/
-    MainMenu mainMenu = new MainMenu();
-    SendEmail sender = new SendEmail();
-    
+       
     public DisciplinaryCases() {
+               
         initComponents();
         show_cases();
         setLocationRelativeTo(null);
@@ -112,7 +115,6 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         tblDisciplinaryCases = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         btnCloseDisciplanaryCases = new javax.swing.JButton();
-        btnSendEmail = new javax.swing.JButton();
         btnAddCase = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jButton2 = new javax.swing.JButton();
@@ -130,18 +132,19 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         txtSearchRegNo = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnDeleteCase = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 255));
 
         jLabel1.setFont(new java.awt.Font("Papyrus", 1, 14)); // NOI18N
         jLabel1.setText("Disciplinary Cases");
 
-        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        tblDisciplinaryCases.setBackground(new java.awt.Color(0, 204, 255));
+        tblDisciplinaryCases.setBackground(new java.awt.Color(0, 102, 255));
         tblDisciplinaryCases.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         tblDisciplinaryCases.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         tblDisciplinaryCases.setModel(new javax.swing.table.DefaultTableModel(
@@ -174,15 +177,6 @@ public class DisciplinaryCases extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnCloseDisciplanaryCases, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, 116, 37));
-
-        btnSendEmail.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
-        btnSendEmail.setText("Send Email");
-        btnSendEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSendEmailActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnSendEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 490, 113, 37));
 
         btnAddCase.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
         btnAddCase.setText("Add Case");
@@ -256,6 +250,14 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         });
         jPanel2.add(btnDeleteCase, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 174, 35));
 
+        jButton4.setText("Send Email");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 490, 110, 40));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -269,7 +271,7 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -336,13 +338,6 @@ public class DisciplinaryCases extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void btnSendEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendEmailActionPerformed
-        
-        this.dispose();
-        //sender.setVisible(true);
-        
-    }//GEN-LAST:event_btnSendEmailActionPerformed
-
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
     try{
             String searchRegNo = "SELECT * FROM disciplinarycase WHERE registrationnumber = ?";
@@ -366,7 +361,7 @@ public class DisciplinaryCases extends javax.swing.JFrame {
     private void btnDeleteCaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCaseActionPerformed
 
         int result = JOptionPane.showConfirmDialog(null,
-            "Are you sure you wish to cancel log-in and Exit Application?",null, JOptionPane.YES_NO_OPTION);
+            "Are you sure you wish to delete the selected record?",null, JOptionPane.YES_NO_OPTION);
         if(result == JOptionPane.YES_OPTION) {
             try{
             String deleteCase = "DELETE FROM public.disciplinarycase WHERE registrationnumber = ?";
@@ -386,8 +381,14 @@ public class DisciplinaryCases extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteCaseActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //show_cases();
+        show_cases();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.dispose();
+        SendCaseEmail sends = new SendCaseEmail();
+        sends.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -430,9 +431,9 @@ public class DisciplinaryCases extends javax.swing.JFrame {
     private javax.swing.JButton btnCloseDisciplanaryCases;
     private javax.swing.JButton btnDeleteCase;
     private javax.swing.JButton btnSearch;
-    private javax.swing.JButton btnSendEmail;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

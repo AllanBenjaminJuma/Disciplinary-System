@@ -18,12 +18,12 @@ import javax.swing.JOptionPane;
  *
  * @author allen
  */
-public class SendEmail extends javax.swing.JFrame {
+public class SendCaseEmail extends javax.swing.JFrame {
 
     /**
      * Creates new form SendEmail
      */
-    public SendEmail() {
+    public SendCaseEmail() {
         initComponents();
         setLocationRelativeTo(null);
     }
@@ -104,7 +104,7 @@ public class SendEmail extends javax.swing.JFrame {
         jPanel1.add(txtmsgreceiver, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 310, 40));
 
         txtmsgsender.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
-        txtmsgsender.setText("dumbestcodecs@gmail.com");
+        txtmsgsender.setText("schooldisciplinarysystem@gmail.com");
         jPanel1.add(txtmsgsender, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 310, 40));
 
         txtmsgsubject.setFont(new java.awt.Font("Papyrus", 0, 12)); // NOI18N
@@ -117,7 +117,7 @@ public class SendEmail extends javax.swing.JFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 260, 310, 130));
 
         btnbtncancelmsg.setFont(new java.awt.Font("Papyrus", 0, 14)); // NOI18N
-        btnbtncancelmsg.setText("Cancel");
+        btnbtncancelmsg.setText("Close");
         btnbtncancelmsg.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbtncancelmsgActionPerformed(evt);
@@ -143,14 +143,9 @@ public class SendEmail extends javax.swing.JFrame {
         
         String toEmail = txtmsgreceiver.getText();
         String fromEmail = txtmsgsender.getText();
-        String fromEmailPassword = "AllanCodecs1995";
+        String fromEmailPassword = "qwerty123!@#";
         String subjectEmail = txtmsgsubject.getText();
-        
-//        Properties properties = new Properties();
-//        properties.put("mail.smtp.auth", "true");
-//        properties.put("mail.smtp.starttls.enable", "true");
-//        properties.put("mail.smtp.port", "587");
-        
+                
         Properties properties = new Properties();
         properties.put("mail.smtp.auth","true");
         properties.put("mail.smtp.starttls.enable","true");
@@ -184,8 +179,9 @@ public class SendEmail extends javax.swing.JFrame {
     }//GEN-LAST:event_btnsendmsgActionPerformed
 
     private void btnbtncancelmsgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbtncancelmsgActionPerformed
-        //this.dispose();
-        System.exit(0);
+        this.dispose();
+        AdminMainMenu adminMM = new AdminMainMenu();
+        adminMM.setVisible(true);
     }//GEN-LAST:event_btnbtncancelmsgActionPerformed
 
     /**
@@ -205,20 +201,21 @@ public class SendEmail extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SendEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SendCaseEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SendEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SendCaseEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SendEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SendCaseEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SendEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SendCaseEmail.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SendEmail().setVisible(true);
+                new SendCaseEmail().setVisible(true);
             }
         });
     }

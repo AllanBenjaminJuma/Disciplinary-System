@@ -23,7 +23,7 @@ public class NewUser extends javax.swing.JFrame {
     /**
      * Creates new form NewUser2
      */
-      MainMenu mainMenu = new MainMenu();
+      AdminMainMenu mainMenu = new AdminMainMenu();
       public Connection conn3 = null;
       
       

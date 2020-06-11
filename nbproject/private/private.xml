@@ -3,14 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/NewParent.java</file>
             <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/DisciplinaryCases.java</file>
-            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/model/DBConnection.java</file>
             <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/AdminLogIn.java</file>
             <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/StudentDisciplinarySystem.java</file>
-            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/emailsender/SendEmail.java</file>
-            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/NewUser.java</file>
-            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/NewStudent.java</file>
+            <file>file:/C:/Users/allen/Documents/NetBeansProjects/Student%20Disciplinary%20system/src/student/disciplinary/system/view/UserMainMenu.java</file>
         </group>
     </open-files>
 </project-private>

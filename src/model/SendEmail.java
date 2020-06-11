@@ -21,7 +21,7 @@ public class SendEmail {
     final String username = "dumbestcodecs@gmail.com";//dumbestcodecs@gmail.com
     final String password = "AllanCodecs1995";//AllanCodecs1995
     String fromEmail = "dumbestcodecs@gmail.com";
-    String toEmail = "alanben93@gmail.com";
+    String toEmail = "lilianphostine@gmail.com";
     
     Properties properties = new Properties();
     properties.put("mail.smtp.auth","true");
@@ -46,4 +46,8 @@ public class SendEmail {
             ex.printStackTrace();
         }
         }
+
+    public void setVisible() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

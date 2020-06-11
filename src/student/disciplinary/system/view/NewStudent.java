@@ -21,7 +21,7 @@ public class NewStudent extends javax.swing.JFrame {
      * Creates new form NewStudent2
      */
        
-    MainMenu mainMenu = new MainMenu();
+    AdminMainMenu mainMenu = new AdminMainMenu();
       
     public Connection conn = null;
     
